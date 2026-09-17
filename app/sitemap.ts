@@ -1,0 +1,1 @@
+import type {MetadataRoute} from 'next';import {siteUrl,isLive} from '@/lib/config';export default function sitemap():MetadataRoute.Sitemap{return isLive()?['','/shop','/book','/donate','/privacy','/terms','/accessibility'].map(path=>({url:siteUrl()+path,changeFrequency:'monthly',priority:path===''?1:.7})):[]}

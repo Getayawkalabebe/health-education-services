@@ -1,0 +1,1 @@
+import type {MetadataRoute} from 'next';import {siteUrl,isLive} from '@/lib/config';export default function robots():MetadataRoute.Robots{return {rules:{userAgent:'*',...(isLive()?{allow:'/',disallow:['/api/','/checkout/']}:{disallow:'/'})},...(isLive()?{sitemap:siteUrl()+'/sitemap.xml'}:{})}}

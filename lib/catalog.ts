@@ -1,0 +1,11 @@
+export type ProductId = 'cgm' | 'coaching' | 'bundle';
+export type Product = {id:ProductId;name:string;category:'Technology'|'Coaching';description:string;detail:string;amount:number;image:string;imageAlt:string;tag:string;physical:boolean;available:boolean};
+export const products:Product[]=[
+{id:'cgm',name:'Dexcom CGM sensors',category:'Technology',description:'A clearer view of your glucose patterns, with support to understand them.',detail:'Sensor model, compatibility, eligibility and shipping will be confirmed before live sales open.',amount:8900,image:'/images/active-living.png',imageAlt:'Two friends walking outdoors',tag:'Technology + human support',physical:true,available:true},
+{id:'coaching',name:'Your next-step session',category:'Coaching',description:'One focused conversation. A practical plan that fits the life you actually live.',detail:'A 60-minute virtual health coaching session. Your session is scheduled after purchase.',amount:12500,image:'/images/wellness-portrait.png',imageAlt:'A woman smiling in a garden',tag:'One-on-one coaching',physical:false,available:true},
+{id:'bundle',name:'The everyday wellness bundle',category:'Coaching',description:'Build momentum with three personalized sessions and nutrition education.',detail:'Three 60-minute virtual coaching sessions. No medical device is included.',amount:32500,image:'/images/nutrition.png',imageAlt:'Salmon, greens and grains on a blue plate',tag:'Three sessions. Ongoing support.',physical:false,available:true}
+];
+export const services=[{id:'discovery',name:'Let’s get acquainted',duration:20,description:'An introductory conversation about your goals and the support you are looking for.',label:'Discovery call'},{id:'coaching',name:'Personalized health coaching',duration:60,description:'Practical education and support for diabetes, blood pressure, and everyday wellbeing.',label:'Health coaching'},{id:'nutrition',name:'Nutrition, made personal',duration:60,description:'Build a realistic approach to food around your preferences, routine, and goals.',label:'Nutrition coaching'}] as const;
+export type ServiceId=typeof services[number]['id'];
+export const money=(amount:number)=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:amount%100===0?0:2}).format(amount/100);
+

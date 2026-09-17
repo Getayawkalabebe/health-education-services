@@ -1,0 +1,3 @@
+import Link from 'next/link';
+export function LegalPage({title,intro,children}:{title:string;intro:string;children:React.ReactNode}){return <main id="main-content" className="subpage shell"><div className="breadcrumb"><Link href="/">Home</Link><span>/</span><span>{title}</span></div><div className="page-intro"><p className="eyebrow">CLEAR INFORMATION. HUMAN CARE.</p><h1>{title}</h1><p>{intro}</p></div><article className="legal-content">{children}</article></main>}
+export function ContactNote(){return process.env.CONTACT_EMAIL?<p>Contact HES at <a href={'mailto:'+process.env.CONTACT_EMAIL}>{process.env.CONTACT_EMAIL}</a>.</p>:<p>A direct contact address will be published before this website begins accepting live bookings or payments.</p>}

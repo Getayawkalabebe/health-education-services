@@ -1,0 +1,8 @@
+import {z} from 'zod';
+export const cartSchema=z.object({items:z.array(z.object({id:z.enum(['cgm','coaching','bundle']),quantity:z.number().int().min(1).max(10)}).strict()).min(1).max(3)}).strict().refine(v=>new Set(v.items.map(i=>i.id)).size===v.items.length,{message:'Duplicate products are not allowed.'});
+export const donationSchema=z.object({amount:z.number().int().min(500).max(1000000)}).strict();
+export const timezoneSchema=z.string().max(80).refine(v=>{try{new Intl.DateTimeFormat('en-US',{timeZone:v}).format();return true}catch{return false}},'Choose a valid time zone.');
+export const bookingSchema=z.object({service:z.enum(['discovery','coaching','nutrition']),start:z.string().datetime({offset:true}),name:z.string().trim().min(2).max(100),email:z.string().trim().email().max(254),timeZone:timezoneSchema,consent:z.literal(true)}).strict().refine(v=>{const delta=new Date(v.start).getTime()-Date.now();return delta>0&&delta<91*86400000},{message:'Choose a future appointment within 90 days.'});
+export const slotQuerySchema=z.object({service:z.enum(['discovery','coaching','nutrition']),start:z.string().regex(/^\d{4}-\d{2}-\d{2}$/),end:z.string().regex(/^\d{4}-\d{2}-\d{2}$/),timeZone:timezoneSchema}).refine(v=>{const start=Date.parse(v.start),end=Date.parse(v.end);return Number.isFinite(start)&&Number.isFinite(end)&&end>=start&&end-start<=42*86400000&&start<Date.now()+91*86400000&&end>Date.now()-32*86400000},{message:'Invalid calendar range.'});
+export function assertSameOrigin(origin:string|null,expected:string){if(!origin||new URL(origin).origin!==new URL(expected).origin)throw new Error('Origin is not allowed.');}
+export function validIdempotencyKey(key:string|null){return !!key&&/^[a-f0-9-]{36}$/i.test(key);}

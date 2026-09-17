@@ -1,0 +1,1 @@
+'use client';export default function ErrorPage({reset}:{reset:()=>void}){return <main id="main-content" className="shell"><section className="receipt"><h1>A small pause.</h1><p>This page couldn’t load. Please try again.</p><button className="button button-primary" onClick={reset}>Try again</button></section></main>}
