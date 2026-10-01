@@ -1,5 +1,16 @@
 # Health Education Services
 
+## Current homepage design
+
+The homepage now serves the donation-led redesign from `public/hes-preview/index.html` through a Next.js `beforeFiles` rewrite. This preserves the root URL and the existing application routes and provider adapters. The preview uses its own stylesheet and scripts, with deployment-safe asset URLs.
+
+The redesign includes revised copy, program options, donation amount/frequency review, consultation preferences, searchable guides, an inquiry list, a pauseable introduction, and contact/social links. It remains an explicitly labeled preview: it does not collect payments, enroll users, reserve appointments, or submit inquiries. Provider URLs in `public/hes-preview/config.js` are currently empty. Existing legacy routes remain available but are not used by the new homepage flows.
+
+A push to the Vercel-connected production branch should deploy this homepage. No private project notes or clinical source documents are included in the redesign assets.
+
+## Existing application documentation
+
+
 A complete Next.js website for personalized health education, coaching, Dexcom tools and community outreach.
 
 ## Stack
