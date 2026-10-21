@@ -13,3 +13,7 @@
 @media(max-width:850px){.story-grid{grid-template-rows:330px 40px 330px}.quote-card p{font-size:13px}.quote-card h3{font-size:23px}}
 @media(max-width:650px){.story-grid{grid-template-rows:none}.quote-card{min-height:330px}.quote-card p{font-size:13px}.mini-label{font-size:9px}.footer-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:650px){.hero{min-height:0;padding-bottom:35px}.hero-copy{padding-top:65px}.hero-badge{position:relative;left:auto;right:auto;top:auto;bottom:auto;margin:30px 7% 20px;width:calc(86% - 1px)}.hero-badge strong{font-size:29px}.hero-badge strong em{display:inline}.hero-badge strong em:before{content:' '}.hero-badge p br{display:none}.hero-badge p{font-size:12px}.hero-secondary{margin-top:15px}.motion-toggle{bottom:9px}}
+
+/* Integrate the transparent logo with the header and footer surfaces. */
+.brand img{background:transparent;border-radius:0;padding:0;filter:brightness(0) invert(1);width:145px;height:78px}header .brand img{filter:brightness(0) invert(1) drop-shadow(0 1px 4px #001c1b35)}
+@media(max-width:650px){.brand img{width:125px;height:68px}}
