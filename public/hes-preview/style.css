@@ -28,3 +28,8 @@ header{padding-left:5%;padding-right:5%}.hero-copy{padding-left:6%;max-width:760
 
 /* Exact supplied logo palette: green #61bf1a and blue #0047ba. */
 :root{--green:#61bf1a;--blue:#0047ba}.button,.round,.badge-label,.amounts input:checked+span,details[open] summary:after{color:#08213e}.button:hover{color:#08213e}.button.blue{color:white}.round.dark{color:white}.hero-copy .eyebrow:before{color:#8de348}nav a[aria-current]{border-bottom-color:#61bf1a}.featured .service-icon{color:#08213e}.hero-badge .badge-label{color:#08213e}
+
+/* Light brand surfaces keep the original blue-and-green logo visible. */
+header{background:rgba(255,255,255,.97);border-bottom:1px solid #e2e9f2;box-shadow:0 3px 20px #0b255008}.brand img,header .brand img{filter:none;background:transparent}header nav a,header nav .navlink{color:#14305a}header nav a[aria-current]{color:#0047ba;border-bottom-color:#61bf1a}.header-contact{background:#edf3fc;color:#14305a}.header-contact:hover{background:#e3edfb}
+footer{background:#f7f9fc;color:#14305a;border-top:1px solid #dce5f0}.footer-grid a,.footer-grid button,.footer-grid address,.footer-intro p{color:#4c607b}.footer-grid a:hover,.footer-grid button:hover{color:#0047ba}.footer-email{border-bottom-color:#cfdbea}.footer-bottom{border-top-color:#d7e2ef;color:#526681}.social-links a{background:#e5edf9;color:#0047ba}.social-links a:hover{background:#0047ba;color:#fff}.follow-label{color:#14305a}
+@media(max-width:650px){header .menu{background:#edf3fc;color:#14305a;border-color:#cbd8e9}#navigation{background:#fff;border:1px solid #dce5f0;box-shadow:0 15px 35px #102f6120}#navigation a,#navigation .navlink{color:#14305a}.social-links a{color:#0047ba}}
