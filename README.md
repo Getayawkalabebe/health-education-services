@@ -1,6 +1,12 @@
 # Health Education Services
 
-## Reference-inspired redesign — October 21, 2026
+## Willow Creek-inspired transformation — October 21, 2026
+
+The current homepage adapts the user-supplied Willow Creek reference into HES: light sticky header with pill navigation, split photography hero, introductory focus strip, image-led service carousel, full-width community panorama, editorial story, individual/group learning comparison, supporting values and education content, resource photography, planned-pilot summary, donation review, FAQs, and enquiry form.
+
+HES’s original-color logo, blue/green/white palette, edge-to-edge page, light footer, Services label without a count, and preview limits are preserved. The enquiry form prepares a mailto draft or downloadable text; it does not send messages from the server. No reference-site assets or wedding copy are used.
+
+## Earlier reference-inspired redesign — October 21, 2026
 
 The homepage now follows the supplied visual reference: full-photo hero, cream/teal/lime palette, serif editorial headings, about section and clearly labeled planned pilot figures, service carousel, support accordion, keyboard-accessible values tabs, educational story mosaic, donation review, FAQs, photographic resource cards, and a dark contact footer. Testimonial positions are adapted to illustrative learning prompts; no reviews or satisfaction statistics are fabricated. Existing illustrative HES photographs are reused and optimized as WebP. The footer update link opens an email request rather than pretending to register a newsletter subscription.
 
