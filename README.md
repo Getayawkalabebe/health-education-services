@@ -1,5 +1,9 @@
 # Health Education Services
 
+## Reference-inspired redesign — October 21, 2026
+
+The homepage now follows the supplied visual reference: full-photo hero, cream/teal/lime palette, serif editorial headings, about section and clearly labeled planned pilot figures, service carousel, support accordion, keyboard-accessible values tabs, educational story mosaic, donation review, FAQs, photographic resource cards, and a dark contact footer. Testimonial positions are adapted to illustrative learning prompts; no reviews or satisfaction statistics are fabricated. Existing illustrative HES photographs are reused and optimized as WebP. The footer update link opens an email request rather than pretending to register a newsletter subscription.
+
 ## Current homepage design
 
 The homepage now serves the donation-led redesign from `public/hes-preview/index.html` through a Next.js `beforeFiles` rewrite. This preserves the root URL and the existing application routes and provider adapters. The preview uses its own stylesheet and scripts, with deployment-safe asset URLs.
