@@ -73,3 +73,11 @@ if(landingVideo){
  motionPreference.addEventListener('change',event=>{if(event.matches)landingVideo.pause();});
  if(!motionPreference.matches)landingVideo.play().catch(syncVideoButton);syncVideoButton();
 }
+
+const dropdownButtons=$$('.dropdown-toggle');
+function closeDropdowns(){dropdownButtons.forEach(b=>{b.setAttribute('aria-expanded','false');document.getElementById(b.getAttribute('aria-controls')).hidden=true})}
+dropdownButtons.forEach(b=>b.onclick=()=>{const open=b.getAttribute('aria-expanded')!=='true';closeDropdowns();b.setAttribute('aria-expanded',String(open));document.getElementById(b.getAttribute('aria-controls')).hidden=!open});
+document.addEventListener('click',e=>{if(!e.target.closest('header'))closeDropdowns()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){const active=dropdownButtons.find(b=>b.getAttribute('aria-expanded')==='true');closeDropdowns();if(active)active.focus()}});
+$$('.dropdown-panel a').forEach(a=>a.addEventListener('click',closeDropdowns));
+$$('[data-nav-topic]').forEach(b=>b.onclick=()=>{const topic=b.dataset.navTopic;closeDropdowns();$('#navigation').classList.remove('open');$('.menu').setAttribute('aria-expanded','false');if(topic==='Explore CGM options'){shop('Technology');return}show(topic,`<p>Contact HES to ask about ${escapeText(topic.toLowerCase())}, current availability, and next steps.</p><p>Details and availability for this offering have not yet been published.</p><a class="button blue full" href="mailto:lateef@healthedservices.org?subject=${encodeURIComponent('HES enquiry: '+topic)}">Email HES about this topic</a><a class="outline full" href="tel:+17573846250">Call 757-384-6250</a>`)});
