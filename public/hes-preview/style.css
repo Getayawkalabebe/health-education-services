@@ -94,3 +94,6 @@ body.program-guide { background: #f3f6fb; }
 @media (max-width: 700px) {
   .program-guide .program-directory { grid-template-columns: 1fr; gap: 16px; }
 }
+
+.standalone-program { margin-top: 22px; }
+.standalone-program h2 { font: 700 1.125rem/1.3 "DM Sans", sans-serif; margin: 25px 0 7px; }
